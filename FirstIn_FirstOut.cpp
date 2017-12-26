@@ -39,3 +39,31 @@ class Fcfs
 
     cout<<"\nProcess\t\tBurst Time\tWaiting Time\tTurnaround Time";
 }
+	
+	 void turntime()
+     {
+	  
+    //calculating turnaround time
+    for(i=0;i<n;i++)
+    {
+        tat[i]=bt[i]+wt[i];
+        avwt+=wt[i];
+        avtat+=tat[i];
+        cout<<"\nP["<<i+1<<"]"<<"\t\t"<<bt[i]<<"\t\t"<<wt[i]<<"\t\t"<<tat[i];
+    }
+
+    avwt/=n;
+    avtat/=n;
+    cout<<"\n\nAverage Waiting Time:"<<avwt;
+    cout<<"\nAverage Turnaround Time:"<<avtat;
+	}
+
+};
+
+int main()
+{
+	Fcfs obj;
+	obj.read();
+	obj.waittime();
+	obj.turntime();
+}
