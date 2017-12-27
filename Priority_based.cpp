@@ -58,3 +58,43 @@ void sortPriority()
 	}
 	friend void waittime(Priority);
 };
+
+
+ void waittime(Priority o)
+ {
+ 	
+    
+ 
+    o.wt[0]=0;            //waiting time for first process is zero
+ 
+    //calculate waiting time
+    for(int i=1;i<o.n;i++)
+    {
+        o.wt[i]=0;
+        for(int j=0;j<i;j++)
+            o.wt[i]+=o.bt[j];
+ 
+        o.total+=o.wt[i];
+    }
+ 
+   o.avg_wt=o.total/o.n;      //average waiting time
+    o.total=0;
+ 
+    cout<<"\nProcess\t    Burst Time    \tWaiting Time\tTurnaround Time";
+    for(int i=0;i<o.n;i++)
+    {
+        o.tat[i]=o.bt[i]+o.wt[i];     //calculate turnaround time
+        o.total+=o.tat[i];
+        cout<<"\nP["<<o.p[i]<<"]\t\t  "<<o.bt[i]<<"\t\t    "<<o.wt[i]<<"\t\t\t"<<o.tat[i];
+    }
+ 
+   o.avg_tat=o.total/o.n;     //average turnaround time
+    cout<<"\n\nAverage Waiting Time="<<o.avg_wt;
+    cout<<"\nAverage Turnaround Time="<<o.avg_tat;
+ 
+	
+ 	
+    
+ 	
+ }
+ 
