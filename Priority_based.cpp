@@ -97,4 +97,12 @@ void sortPriority()
     
  	
  }
+
+ int main() 
+   {
+   	Priority p;
+   	p.read();
+   	p.sortPriority();
+   	waittime(p);
+   }
  
