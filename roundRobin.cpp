@@ -11,3 +11,15 @@ public:
     int getNextProcess(int);
     void computeRR();
 };
+void sched::readData() // defining fn outside class
+{
+    cout<<"Enter no. of processes\n";
+    cin>>n;
+    cout<<"Enter the burst times in order :\n";
+    for(int i=0;i<n;i++)
+    cin>>bt[i];
+    cout<<"Enter the arrival times in order:\n";
+    for(int i=0;i<n;i++)
+    cin>>at[i];
+}
+ 
