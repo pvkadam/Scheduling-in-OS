@@ -49,4 +49,15 @@ void sched::dispTime()
     cout<<"Avg Waiting time = "<<(double)twt/n<<" and Avg Turnaround time = "<<(double)ttat/n<<endl;
     cout<<"Scheduling complete\n";
 }
+ int sched::getNextProcess(int time){
  
+        int i,low;
+        for(i=0;i<n;i++)
+            if(finish[i]==0){low=i; break; }
+        for(i=0;i<n;i++)
+            if(finish[i]!=1)
+                if(rt[i]<rt[low] && at[i]<=time)
+                        low=i;
+        return low;
+ 
+}
