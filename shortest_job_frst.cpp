@@ -28,3 +28,9 @@
                   arrival[j-1]=temp2;
                 }
             }
+	       if(i==1)
+            {
+              start[0]=0;
+              end[0]=burst[0];
+              wait[0]=0;
+            }
