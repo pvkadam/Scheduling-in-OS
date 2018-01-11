@@ -1,4 +1,4 @@
- #include <iostream>
+#include <iostream>
     using namespace std;
 
     int main()
@@ -12,3 +12,19 @@
 
       //array instantiations                                                                                          
       int start[n], end[n], wait[n];
+
+      //calculations                                                                                                  
+      for(i=1;i<=n;i++)
+        {
+          for(j=i+1;j<=n;j++)
+            {
+              if (i>=2 && burst[i-1]>burst[j-1])
+                {
+                  temp = burst[i-1];
+                  temp2 = arrival[i-1];
+                  burst[i-1]=burst[j-1];
+                  arrival[i-1]=arrival[j-1];
+                  burst[j-1]=temp;
+                  arrival[j-1]=temp2;
+                }
+            }
