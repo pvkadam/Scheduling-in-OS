@@ -100,4 +100,12 @@ void sched::computeRR(){
     dispTime();
  
 }
+ int main()
+{
+    sched s;
+    s.computeRR();
+    return 0;
  
+}
+
+
