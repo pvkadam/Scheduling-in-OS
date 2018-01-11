@@ -34,3 +34,9 @@
               end[0]=burst[0];
               wait[0]=0;
             }
+	       else
+            {
+              start[i-1]=end[i-2];
+              end[i-1]=start[i-1]+burst[i-1];
+              wait[i-1]=start[i-1]+arrival[i-1];
+            }
