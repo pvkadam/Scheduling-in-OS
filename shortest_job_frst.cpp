@@ -60,3 +60,14 @@
         tot+=end[i-1];
         avgturnaround=tot/n;
       }
+      //avg response time                                                                                             
+      for(i=1,tot=0;i<n;i++){
+        tot+=start[i-1];
+        avgresponse=tot/n;
+      }
+      cout << "\n\nAverage Wait Time: " << avgwait;
+      cout << "\nAverage Response Time: " << avgturnaround;
+      cout << "\nAverage Turnaround Time: " << avgresponse;
+      cout << "\nThroughput for (" << throughput << "): " << tp << endl;
+    }
+}
