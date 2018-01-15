@@ -24,3 +24,18 @@ for(int i=0;i<n;i++)
         
     }
     
+    for(int i=0;i<sbrust;i++)
+    {
+        proc=stack[0];
+        if(temp[proc]==i)
+        {
+            //temp[proc]=i+1;;
+            twaiting=0;
+        }
+        else
+        {    
+            twaiting=i-(temp[proc]);
+                  
+        }
+        temp[proc]=i+1;    
+   
