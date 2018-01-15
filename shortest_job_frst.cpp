@@ -39,3 +39,29 @@ for(int i=0;i<n;i++)
         }
         temp[proc]=i+1;    
    
+        wait[proc]=wait[proc]+twaiting;
+        waiting=waiting+(twaiting);
+         brust[proc]=brust[proc]-1;
+    
+        if(brust[proc]==0)
+        {
+            for(int x=0;x<top-1;x++)
+            {
+                stack[x]=stack[x+1];
+             }
+            top=top-1;
+            for(int z=0;z<top-1;z++)
+            {   
+                 if((brust[stack[0]]>brust[stack[z+1]]) && (arrival[stack[z+1]] <= i+1))
+              {
+                       int t=stack[0];
+            stack[0]=stack[z+1];
+            stack[z+1]=t;
+              }
+          }
+        }
+   
+cout<<"waiting:"<<waiting;
+return 0;
+}
+}
