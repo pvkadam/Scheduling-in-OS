@@ -55,3 +55,8 @@
         tot+=wait[i-1];
         avgwait=tot/n;
       }
+      //avg turnaround time                                                                                           
+      for(i=1,tot=0;i<n;i++){
+        tot+=end[i-1];
+        avgturnaround=tot/n;
+      }
