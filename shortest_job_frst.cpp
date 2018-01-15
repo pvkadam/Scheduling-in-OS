@@ -28,15 +28,30 @@
                   arrival[j-1]=temp2;
                 }
             }
-	       if(i==1)
+          if(i==1)
             {
               start[0]=0;
               end[0]=burst[0];
               wait[0]=0;
             }
-	       else
+          else
             {
               start[i-1]=end[i-2];
               end[i-1]=start[i-1]+burst[i-1];
               wait[i-1]=start[i-1]+arrival[i-1];
             }
+          //throughput                                                                                                
+          if (start[i+1] <= throughput)
+            tp = i+1;
+        }
+
+      //output                                                                                                        
+      cout << "\n\nPROCESS \t BURST TIME\tARRIVAL TIME\tWAIT TIME\tSTART TIME\tEND TIME\n";
+      for (i=0;i<n;i++){
+        cout << "\nP[" << i + 1 << "]" << "\t\t" << burst[i] << "\t\t" << arrival[i] << "\t\t" << wait[i] << "\t\t" << start[i] << "\t\t" << end[i];
+      }
+      //avg wait time                                                                                                 
+      for(i=1,tot=0;i<n;i++){
+        tot+=wait[i-1];
+        avgwait=tot/n;
+      }
