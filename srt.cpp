@@ -36,3 +36,29 @@ void Srtsched::Init(){
         total+=bt[i];
         }
 }
+ 
+void Srtsched::computeSRT(){
+    readData();
+    Init();
+    int time,next=0,old,i;
+    cout<<"order of scheduling\n ";
+    for(time=0;time<total;time++)
+    {
+        old=next;
+        next=getNextProcess(time);
+        if(old!=next || time==0) cout<<"("<<time<<")|==P"<<next+1<<"==|";
+        rt[next]=rt[next]-1;
+        if(rt[next]==0) finish[next]=1;
+        for(i=0;i<n;i++)
+            if(i!=next && finish[i]==0 && at[i]<=time)
+                wt[i]++;
+ 
+    }
+    cout<<"("<<total<<")"<<endl;
+ 
+    for(i=0;i<n;i++)
+        if(!finish[i]) {cout<<"Scheduling failed, cannot continue\n"; return;}
+ 
+    dispTime();
+ 
+}
