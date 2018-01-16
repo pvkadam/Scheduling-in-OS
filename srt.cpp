@@ -23,3 +23,16 @@ void Srtsched::readData()
     for(int i=0;i<n;i++)
     cin>>at[i];
 }
+ 
+void Srtsched::Init(){
+    total=0;
+    twt=0;
+    ttat=0;
+    for(int i=0; i<n; i++){
+        rt[i]=bt[i];
+        finish[i]=0;
+        wt[i]=0;
+        tat[i]=0;
+        total+=bt[i];
+        }
+}
