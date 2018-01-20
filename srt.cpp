@@ -93,4 +93,13 @@ int Srtsched::getNextProcess(int time){
         return low;
  
 }
+
+int main()
+{
+    Srtsched s;
+    s.computeSRT();
+    return 0;
+ 
+}
+
  
