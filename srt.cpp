@@ -62,3 +62,20 @@ void Srtsched::computeSRT(){
     dispTime();
  
 }
+
+
+void Srtsched::dispTime()
+{
+    for(int i=0;i<n;i++)
+    {
+ 
+        twt+=wt[i];
+        tat[i]=wt[i]+bt[i];
+        ttat+=tat[i];
+        cout<<"Waiting time for P"<<(i+1)<<" = "<<wt[i]<<", Turnaround time = "<<tat[i]<<endl;
+ 
+    }
+ 
+    cout<<"Avg Waiting time = "<<(double)twt/n<<" and Avg Turnaround time = "<<(double)ttat/n<<endl;
+    cout<<"Scheduling complete\n";
+}
