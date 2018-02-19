@@ -3,63 +3,6 @@
 
     int main()
     {
-Conversation opened. 1 read message.
-
-Skip to content
-Using Gmail with screen readers
-2
-Search
-
-
-scheduling ds 
-
-Gmail
-COMPOSE
-Labels
-Inbox (484)
-Starred
-Important
-Sent Mail
-Drafts (28)
-Categories
-Junk E-mail
-Personal
-Travel
-xyz
-More labels 
-Hangouts
-
- 
- 
- 
-Move to Inbox More 
-27 of 33  
- 
-Print all In new window
-(no subject) 
-Inbox
-x 
-
-Madhuvanee Srinivas <madhuvaneesrinivas@gmail.com>
-Attachments9/26/16
-
-to me 
-
-8 Attachments 
- 
-	
-Click here to Reply or Forward
-13.07 GB (87%) of 15 GB used
-Manage
-Terms - Privacy
-Last account activity: 1 minute ago
-Details
-
- #include <iostream>
-    using namespace std;
-
-    int main()
-    {
 	int n, burst[20], arrival[20], throughput;
     {
       cout << "Output for SJF_Non_Preemptive scheduling algorithm" << endl;
@@ -128,18 +71,3 @@ Details
       cout << "\nThroughput for (" << throughput << "): " << tp << endl;
     }
 }
-sjf.cpp
-Open with
-Displaying sjf.cpp.
-	int n, burst[20], arrival[20], throughput;
-    {
-      cout << "Output for SJF_Non_Preemptive scheduling algorithm" << endl;
-
-      int i, j, temp, temp2;
-      double tot, avgwait, avgturnaround, avgresponse, tp;
-
-      //array instantiations                                                                                          
-      int start[n], end[n], wait[n];
-
-      //calculations                                                                                                  
-      for(i=1;i<=n;i++)
